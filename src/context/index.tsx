@@ -4,10 +4,6 @@ import { CartContext, CartProvider } from './cart';
 import { CategoriesContext, CategoriesProvider } from './categories';
 import { ProductsContext, ProductsProvider } from './products';
 
-export const useCategories = () => {
-	return useContext(CategoriesContext);
-};
-
 export const useProducts = () => {
 	return useContext(ProductsContext);
 };
