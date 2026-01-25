@@ -1,13 +1,14 @@
-import { createContext } from "react";
-import type { Category } from "../../types/Category";
+import { createContext } from 'react'
+import type { Category } from '../../types/Category'
 
 interface CategoriesContextType {
-    categories: Category[];
+    categories: Category[]
 }
 
 const defaultValue: CategoriesContextType = {
-     categories: [],
+    categories: [],
 }
 
-export const CategoriesContext = createContext<CategoriesContextType>(defaultValue)
+export const CategoriesContext =
+    createContext<CategoriesContextType>(defaultValue)
 CategoriesContext.displayName = 'Categories'

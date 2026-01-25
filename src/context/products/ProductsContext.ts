@@ -1,10 +1,10 @@
-import { createContext } from "react";
-import type { Product } from "../../types/Product";
+import { createContext } from 'react'
+import type { Product } from '../../types/Product'
 
 interface ProductsContextType {
-    products: Product[];
-    selectedProduct: Product | null;
-    setSelectedProduct: (product: Product | null) => void;
+    products: Product[]
+    selectedProduct: Product | null
+    setSelectedProduct: (product: Product | null) => void
 }
 
 const defaultValue: ProductsContextType = {
@@ -13,5 +13,5 @@ const defaultValue: ProductsContextType = {
     setSelectedProduct: () => {},
 }
 
-export const ProductsContext = createContext<ProductsContextType>(defaultValue);
+export const ProductsContext = createContext<ProductsContextType>(defaultValue)
 ProductsContext.displayName = 'Products'
