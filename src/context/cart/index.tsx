@@ -2,20 +2,6 @@
 import { createContext, useState } from 'react';
 import type { Product } from '../../types';
 
-export const CartContext = createContext<{
-	items: (Product & { quantity: number })[];
-	addItem: (item: Product & { quantity: number }) => void;
-	removeItem: (item: Product) => void;
-	clear: () => void;
-	changeQuantity: (item: Product & { quantity: number }) => void;
-}>({
-	items: [],
-	addItem: () => {},
-	removeItem: () => {},
-	clear: () => {},
-	changeQuantity: () => {},
-});
-
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 	const [items, setItems] = useState<(Product & { quantity: number })[]>([]);
 
