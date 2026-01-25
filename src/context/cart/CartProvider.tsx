@@ -1,8 +1,12 @@
-/* eslint-disable react-refresh/only-export-components */
-import { createContext, useState } from 'react';
-import type { Product } from '../../types';
+import { useState } from "react";
+import type { Product } from "../../types/Product";
+import { CartContext } from "./CartContext";
 
-export const CartProvider = ({ children }: { children: React.ReactNode }) => {
+interface CartProviderProps {
+    children: React.ReactNode
+}
+
+export const CartProvider = ({ children }: CartProviderProps) => {
 	const [items, setItems] = useState<(Product & { quantity: number })[]>([]);
 
 	const changeQuantity = (item: Product & { quantity: number }) => {
@@ -22,8 +26,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 	};
 
 	return (
-		<CartContext.Provider value={{ items, addItem, removeItem, clear, changeQuantity }}>
+		<CartContext value={{ items, addItem, removeItem, clear, changeQuantity }}>
 			{children}
-		</CartContext.Provider>
+		</CartContext>
 	);
 };
