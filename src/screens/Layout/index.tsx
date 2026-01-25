@@ -1,8 +1,9 @@
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
+import { Outlet } from 'react-router';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 import Section from '../assets/section.png';
 
-export const Wrapper = ({ children }: { children: React.ReactNode }) => {
+const Layout = () => {
 	return (
 		<div className='flex flex-col min-h-screen bg-white'>
 			<Header />
@@ -14,8 +15,10 @@ export const Wrapper = ({ children }: { children: React.ReactNode }) => {
 					style={{ objectFit: 'cover' }}
 				/>
 			</div>
-			{children}
+			<Outlet />
 			<Footer />
 		</div>
 	);
 };
+
+export default Layout
