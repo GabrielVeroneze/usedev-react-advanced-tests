@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import Button from '../../components/Button/Button';
+import Button from '../../components/Button';
 import { useCart, useProducts } from '../../context';
 import { formatPrice } from '../../utils';
 import { useNavigate, useParams } from 'react-router';
-import RadioButton from '../../components/RadioButton/RadioButton';
-import Selector from '../../components/Selector/Selector';
+import RadioButton from '../../components/RadioButton';
+import Selector from '../../components/Selector';
 import type { Product } from '../../types';
 
-export default function Product() {
+const Product = () => {
 	const navigate = useNavigate();
 	const { id } = useParams();
 	const { selectedProduct, products, setSelectedProduct } = useProducts();
@@ -142,3 +142,5 @@ export default function Product() {
 		</div>
 	);
 }
+
+export default Product
