@@ -12,10 +12,6 @@ export const useProducts = () => {
 	return useContext(ProductsContext);
 };
 
-export const useCart = () => {
-	return useContext(CartContext);
-};
-
 export const ContextProvider = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<CartProvider>
