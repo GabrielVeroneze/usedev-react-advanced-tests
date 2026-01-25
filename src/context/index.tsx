@@ -4,10 +4,6 @@ import { CartContext, CartProvider } from './cart';
 import { CategoriesContext, CategoriesProvider } from './categories';
 import { ProductsContext, ProductsProvider } from './products';
 
-export const useProducts = () => {
-	return useContext(ProductsContext);
-};
-
 export const ContextProvider = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<CartProvider>
