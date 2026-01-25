@@ -2,12 +2,6 @@
 import { createContext, useEffect, useState } from 'react';
 import type { Category } from '../../types';
 
-export const CategoriesContext = createContext<{
-	categories: Category[];
-}>({
-	categories: [],
-});
-
 export const CategoriesProvider = ({ children }: { children: React.ReactNode }) => {
 	const [categories, setCategories] = useState<Category[]>([]);
 
