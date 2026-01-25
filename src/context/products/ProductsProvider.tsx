@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import type { Product } from '../../types/Product'
 import { ProductsContext } from './ProductsContext'
+import type { Product } from '@/types/Product'
 
 interface ProductsProviderProps {
     children: React.ReactNode

@@ -1,11 +1,9 @@
-import { useNavigate } from 'react-router'
-import ProductCard from '../../components/ProductCard'
-import {
-    useCategories,
-    useProducts,
-} from '../../context/provider/ContextProvider.tsx'
-import SearchInput from '../../components/SearchInput'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
+import { useCategories } from '@/context/categories/useCategories'
+import { useProducts } from '@/context/products/useProducts'
+import ProductCard from '@/components/ProductCard'
+import SearchInput from '@/components/SearchInput'
 
 const Home = () => {
     const navigate = useNavigate()
@@ -77,7 +75,7 @@ const Home = () => {
                                     alt={category.name}
                                     className="w-full h-48 object-cover transition-transform group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                                 <p className="absolute bottom-4 left-4 text-2xl text-white orbitron-bold">
                                     {category.name}
                                 </p>

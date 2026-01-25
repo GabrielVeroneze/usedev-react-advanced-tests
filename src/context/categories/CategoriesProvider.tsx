@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import type { Category } from '../../types/Category'
 import { CategoriesContext } from './CategoriesContext'
+import type { Category } from '@/types/Category'
 
 interface CategoriesProviderProps {
     children: React.ReactNode

@@ -1,9 +1,9 @@
-import Counter from '../../components/Counter'
-import { useCart } from '../../context/provider/ContextProvider.tsx'
-import TrashIcon from '../../assets/trash.svg'
-import { formatPrice } from '../../utils'
-import { useNavigate } from 'react-router'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
+import { useCart } from '@/context/cart/useCart'
+import { formatPrice } from '@/utils/formatPrice'
+import Counter from '@/components/Counter'
+import TrashIcon from '@/assets/trash.svg'
 
 const Cart = () => {
     const { items, removeItem, changeQuantity, clear } = useCart()

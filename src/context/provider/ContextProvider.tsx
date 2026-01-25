@@ -1,6 +1,6 @@
-import { CartProvider } from '../cart/CartProvider'
-import { CategoriesProvider } from '../categories/CategoriesProvider'
-import { ProductsProvider } from '../products/ProductsProvider'
+import { CartProvider } from '@/context/cart/CartProvider'
+import { CategoriesProvider } from '@/context/categories/CategoriesProvider'
+import { ProductsProvider } from '@/context/products/ProductsProvider'
 
 interface ContextProviderProps {
     children: React.ReactNode

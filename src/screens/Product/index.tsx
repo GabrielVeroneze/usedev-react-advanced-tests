@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
-import Button from '../../components/Button'
-import {
-    useCart,
-    useProducts,
-} from '../../context/provider/ContextProvider.tsx'
-import { formatPrice } from '../../utils'
 import { useNavigate, useParams } from 'react-router'
-import RadioButton from '../../components/RadioButton'
-import Selector from '../../components/Selector'
-import type { Product } from '../../types'
+import { useCart } from '@/context/cart/useCart'
+import { useProducts } from '@/context/products/useProducts'
+import { formatPrice } from '@/utils/formatPrice'
+import type { Product as ProductType } from '@/types/Product'
+import Button from '@/components/Button'
+import RadioButton from '@/components/RadioButton'
+import Selector from '@/components/Selector'
 
 const Product = () => {
     const navigate = useNavigate()
@@ -22,7 +20,7 @@ const Product = () => {
     const [selectedSize, setSelectedSize] = useState(
         selectedProduct?.sizes?.[0],
     )
-    const [product, setProduct] = useState<Product | null>(selectedProduct)
+    const [product, setProduct] = useState<ProductType | null>(selectedProduct)
 
     useEffect(() => {
         if (!selectedProduct && id) {

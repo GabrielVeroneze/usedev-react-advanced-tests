@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router'
-import Footer from '../../components/Footer'
-import Header from '../../components/Header'
-import Section from '../assets/section.png'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import Section from '@/assets/section.png'
 
 const Layout = () => {
     return (

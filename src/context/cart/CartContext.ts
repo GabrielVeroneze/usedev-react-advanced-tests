@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import type { Product } from '../../types/Product'
+import type { Product } from '@/types/Product'
 
 interface CartContextType {
     items: (Product & { quantity: number })[]

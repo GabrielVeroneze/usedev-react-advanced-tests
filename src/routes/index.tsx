@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router'
-import Home from '../screens/Home'
-import Layout from '../screens/Layout'
-import NotFound from '../screens/NotFound'
-import Product from '../screens/Product'
-import Cart from '../screens/Cart'
+import Layout from '@/screens/Layout'
+import Home from '@/screens/Home'
+import Product from '@/screens/Product'
+import Cart from '@/screens/Cart'
+import NotFound from '@/screens/NotFound'
 
 export const router = createBrowserRouter([
     {

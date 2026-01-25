@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes } from 'react'
-import CartIcon from '../../assets/add-cart.svg'
+import CartIcon from '@/assets/add-cart.svg'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode
@@ -13,6 +13,7 @@ const Button = ({ children, variant = 'primary', ...props }: ButtonProps) => {
             'text-[#090129] bg-transparent border border-[#780BF7] hover:border-[#430091]',
         'add-to-cart': 'bg-[#780BF7] hover:bg-[#430091] text-white',
     }
+
     return (
         <button
             {...props}

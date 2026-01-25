@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import type { Category } from '../../types/Category'
+import type { Category } from '@/types/Category'
 
 interface CategoriesContextType {
     categories: Category[]
