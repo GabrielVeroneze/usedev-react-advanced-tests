@@ -3,12 +3,15 @@
     "compilerOptions": {
         "verbatimModuleSyntax": false,
         "esModuleInterop": true,
-        "types": ["jest", "@testing-library/jest-dom"]
+        "types": ["vite/client", "jest", "@testing-library/jest-dom", "node"]
     },
     "include": [
+        "src",
         "**/*.test.ts",
         "**/*.test.tsx",
         "**/*.spec.ts",
-        "**/*.spec.tsx"
-    ]
+        "**/*.spec.tsx",
+        "jest.setup.ts"
+    ],
+    "exclude": []
 }
