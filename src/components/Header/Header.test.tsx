@@ -5,6 +5,6 @@ describe('Header', () => {
     test('deve renderizar o header na tela', () => {
         render(<Header />)
 
-        expect(screen.getByTestId('header')).toBeInTheDocument()
+        expect(screen.getByRole('banner')).toBeInTheDocument()
     })
 })
