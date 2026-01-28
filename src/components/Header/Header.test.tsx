@@ -10,7 +10,7 @@ jest.mock('react-router', () => ({
 }))
 
 describe('Header', () => {
-    beforeAll(() => {
+    beforeEach(() => {
         render(
             <MemoryRouter>
                 <Header />
@@ -18,7 +18,9 @@ describe('Header', () => {
         )
     })
 
-    beforeEach(() => {})
+    afterEach(() => {
+        mockNavigate.mockClear()
+    })
 
     test('deve renderizar o header na tela', () => {
         expect(screen.getByRole('banner')).toBeInTheDocument()
