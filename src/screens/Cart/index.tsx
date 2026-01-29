@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useCart } from '@/context/cart/useCart'
 import { formatPrice } from '@/utils/formatPrice'
+import { calculateTotalPrice } from '@/utils/calculatePrice'
 import Counter from '@/components/Counter'
 import TrashIcon from '@/assets/trash.svg'
 
@@ -11,10 +12,7 @@ const Cart = () => {
     const [isProcessing, setIsProcessing] = useState(false)
     const [orderSuccess, setOrderSuccess] = useState(false)
 
-    const totalPrice = items.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0,
-    )
+    const totalPrice = calculateTotalPrice(items)
 
     const handleCheckout = async () => {
         setIsProcessing(true)
