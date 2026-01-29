@@ -4,24 +4,6 @@ import { ContextProvider } from '@/context/provider/ContextProvider'
 import { useCart } from '@/context/cart/useCart'
 import Cart from '../'
 
-export const mockFetch = jest.fn((url: string) => {
-    if (url.includes('/categories')) {
-        return Promise.resolve({
-            json: () => Promise.resolve([]),
-        })
-    }
-
-    if (url.includes('/products')) {
-        return Promise.resolve({
-            json: () => Promise.resolve([]),
-        })
-    }
-
-    return Promise.resolve({
-        json: () => Promise.resolve({}),
-    })
-})
-
 const mockNavigate = jest.fn()
 
 jest.mock('react-router', () => ({
