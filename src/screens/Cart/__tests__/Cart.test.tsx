@@ -1,4 +1,4 @@
-import { act, render } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router'
 import { ContextProvider } from '@/context/provider/ContextProvider'
 import { useCart } from '@/context/cart/useCart'
@@ -28,7 +28,7 @@ const CartItemStub = () => {
         })
     }
 
-    return <button onClick={addTestItem}>Adicionar item de teste</button>
+    return <button onClick={addTestItem}>Add Item</button>
 }
 
 const renderCart = async () => {
@@ -46,4 +46,19 @@ const renderCart = async () => {
     return result
 }
 
-describe('Cart', () => {})
+describe('Cart', () => {
+    beforeEach(() => {
+        jest.clearAllMocks()
+    })
+
+    test('deve renderizar a mensagem de carrinho vazio caso não tenha itens no carrinho', async () => {
+        await renderCart()
+
+        expect(screen.getByText('Seu carrinho está vazio')).toBeInTheDocument()
+
+        const continueShoppingButton = screen.getByText('Continuar comprando')
+        fireEvent.click(continueShoppingButton)
+
+        expect(mockNavigate).toHaveBeenCalledWith('/')
+    })
+})
