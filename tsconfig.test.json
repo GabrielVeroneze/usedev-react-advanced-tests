@@ -11,7 +11,7 @@
         "**/*.test.tsx",
         "**/*.spec.ts",
         "**/*.spec.tsx",
-        "jest.setup.ts"
+        "tests/setup/jest.afterEnv.ts"
     ],
     "exclude": []
 }
