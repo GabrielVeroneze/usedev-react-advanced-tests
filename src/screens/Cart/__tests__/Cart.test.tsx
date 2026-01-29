@@ -61,4 +61,36 @@ describe('Cart', () => {
 
         expect(mockNavigate).toHaveBeenCalledWith('/')
     })
+
+    test('deve mostrar o item adicionado ao carrinho', async () => {
+        await renderCart()
+
+        const addItemButton = screen.getByRole('button', { name: /add item/i })
+        await act(async () => {
+            fireEvent.click(addItemButton)
+        })
+
+        expect(screen.getByText('Test Product')).toBeInTheDocument()
+
+        const incrementButton = screen.getByRole('button', { name: /\+/i })
+        await act(async () => {
+            fireEvent.click(incrementButton)
+        })
+
+        expect(screen.getByText('2')).toBeInTheDocument()
+
+        const decrementButton = screen.getByRole('button', { name: /-/i })
+        await act(async () => {
+            fireEvent.click(decrementButton)
+        })
+
+        expect(screen.getByText('1')).toBeInTheDocument()
+
+        const removeButton = screen.getByRole('img', { name: /trash/i })
+        await act(async () => {
+            fireEvent.click(removeButton)
+        })
+
+        expect(screen.queryByText('Test Product')).not.toBeInTheDocument()
+    })
 })
