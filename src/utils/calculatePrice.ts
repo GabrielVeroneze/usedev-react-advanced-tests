@@ -1,11 +1,18 @@
 import type { Product } from '@/types/Product'
 
-export const calculateTotalPrice = (products: Product[]) => {
-    return products.reduce((acc, product) => acc + product.price, 0)
+export type CartProduct = Product & {
+    quantity: number
+}
+
+export const calculateTotalPrice = (products: CartProduct[]) => {
+    return products.reduce(
+        (acc, product) => acc + product.price * product.quantity,
+        0,
+    )
 }
 
 export const calculateTotalPriceWithDiscount = (
-    products: Product[],
+    products: CartProduct[],
     discount: number,
 ) => {
     if (discount >= 100) {
